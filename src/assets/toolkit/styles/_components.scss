@@ -1,0 +1,201 @@
+@import "variables";
+@import "mixins";
+
+// ------ Media Queries Navigation ------ //
+
+@media screen and (max-width: 755px) {
+  .links a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .search-bar {
+    display: none;
+  }
+}
+
+// ------ Media Queries Hero ------ //
+
+@media screen and (max-width: 740px) {
+  .hero-image .hero-text {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .hero-text h4 {
+    display: none;
+  }
+}
+
+// ------ Media Queries Footer ------ //
+
+@media screen and (max-width: 740px) {
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-info p {
+    font-size: 1rem;
+  }
+}
+
+// ------------------ Navigation ------------------ //
+
+.topnav {
+  overflow: hidden;
+  background-color: $mainbrown;
+  font-family: "Questrial", sans-serif;
+  @include between;
+
+  h1 {
+    color: $softwhite;
+  }
+  a {
+    color: $softwhite;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 24px;
+    margin: 0 10px 0 10px;
+  }
+  a:not(.nohover):hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 4px;
+  }
+  a.active {
+    color: $softwhite;
+  }
+  .icon {
+    display: none;
+  }
+  .navlogo {
+    width: 3.8rem;
+    height: 3.5rem;
+    cursor: pointer;
+  }
+  input {
+    margin-right: 1rem;
+  }
+  .logo {
+    @include center;
+  }
+}
+
+// ------------------ Hero content ------------------ //
+
+.hero-image {
+  background-image: url("/assets/photos/09-day.jpg");
+  height: 50rem;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+  .hero-text {
+    @include center;
+    flex-direction: column;
+    padding-top: 4rem;
+    h4 {
+      font-size: 24px;
+    }
+  }
+  h1 {
+    margin: 0;
+    font-size: 50px;
+  }
+  button {
+    padding: 1rem;
+    border-radius: 4px;
+    border: $orange;
+    background-color: $orange;
+    margin-top: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+// ------------------ Main content ------------------ //
+
+.photo-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem;
+  gap: 1rem;
+
+  h3 {
+    grid-column: 1/4;
+    font-size: 2rem;
+  }
+  .photos {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .photo-wrap {
+    grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .photo-wrap {
+    grid-template-columns: repeat(1, 1fr);
+
+    h3 {
+      grid-column: 1/2;
+    }
+  }
+}
+
+// ------------------ Footer ------------------ //
+
+footer {
+  background-color: $mainbrown;
+  color: $white;
+  width: 100%;
+  margin-top: 2rem;
+
+  .footer-info {
+    @include center;
+    justify-content: space-around;
+  }
+  p {
+    margin: 3rem;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  i {
+    height: 4rem;
+  }
+}
