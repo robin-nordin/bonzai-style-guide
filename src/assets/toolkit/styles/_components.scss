@@ -104,6 +104,37 @@
   }
 }
 
+.card-image {
+  width: 40%;
+  height: auto;
+}
+.card {
+  display: flex;
+  align-items: center;
+  height: auto;
+  background-color: $white;
+  margin: 2rem;
+}
+.card-text {
+  align-self: center;
+  padding: 2rem;
+  width: 25%;
+  margin-bottom: 7rem;
+}
+.card-list {
+  margin: 5rem 0 10rem 10rem;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 4px;
+    border: $orange;
+    background-color: $orange;
+    margin-top: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
 // ------------------ Hero content ------------------ //
 
 .hero-image {
